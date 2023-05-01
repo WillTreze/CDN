@@ -1,0 +1,78 @@
+:root {
+  --notion-dark: #191919;
+  --text-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body,
+html {
+  background-color: var(--notion-dark)
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 25%;
+}
+
+.grid-item {
+  float: left;
+  cursor: pointer;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+div#loading {
+  position: absolute;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background: var(--notion-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div#loading svg {
+  width: 80px;
+  opacity: 0.5;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
