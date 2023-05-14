@@ -16,6 +16,18 @@ function allNamesContainOnlyNumbers(namesArray) {
   }
   return true;
 }
+function showLoading() {
+  const loading = document.querySelector('#loading');
+  loading.style.display = 'flex';
+}
+function hideLoading() {
+  const loading = document.querySelector('#loading');
+  loading.classList.add('fade-out');
+
+  setTimeout(() => {
+    loading.style.display = 'none';
+  }, 1100);
+}
 
 async function masonryAndLightGallery(albumHash, accessToken) {
   let isThereAnError = false;
@@ -91,7 +103,11 @@ async function masonryAndLightGallery(albumHash, accessToken) {
         masonry.layout();
         image.img.classList.add('fade-in');
       });
+      imagesLoaded(grid).on('done', () => {
+        hideLoading();
+      });
     }
+    showLoading();
   }
 };
 
